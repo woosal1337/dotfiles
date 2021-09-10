@@ -102,7 +102,7 @@ filetype plugin indent on
 
 " lightline
 set noshowmode
-let g:lightline = { 'colorscheme': 'onedark' }
+let g:lightline = { 'colorscheme': 'nord' }
 
 " code folding
 set foldmethod=indent
