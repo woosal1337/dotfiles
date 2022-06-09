@@ -125,3 +125,4 @@ bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 
 export TERM=xterm-256color
+#test
