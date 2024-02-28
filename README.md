@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>Dotfiles</h1>
-  <h3>💠 My custom dotfiles.</h3>
+  <h1>dotfiles</h1>
+  <h3>💠 my custom dotfiles.</h3>
 </div>
 
 <br>
