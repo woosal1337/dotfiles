@@ -31,6 +31,31 @@ The next time pi starts, it installs the packages that `settings.json` lists.
 
 These files are left out on purpose. `auth.json` holds credentials. `models-store.json` is a model list that pi rebuilds itself. `extensions/herdr-agent-state.ts` belongs to herdr, which reinstalls and overwrites it.
 
+## zsh
+
+[`zsh/`](zsh) holds my `.zshrc`, `.p10k.zsh`, and an empty `.hushlogin`, which hides the "Last login" line. `~/` links to these files.
+
+The prompt and highlighting use the Vesper colors. The prompt shows a peach folder icon, a gray path with `~` and the repo in bold white, the git branch in mint, and a `❯` that turns red after a failed command. Commands are peach, strings mint, flags gray, unknown commands red, and autosuggestions `#505050`.
+
+It needs [oh-my-zsh](https://ohmyz.sh) and a [Nerd Font](https://www.nerdfonts.com) (v3) for the icons. Install oh-my-zsh, the theme, and the plugins:
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+C="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k "$C/themes/powerlevel10k"
+git clone https://github.com/zsh-users/zsh-autosuggestions "$C/plugins/zsh-autosuggestions"
+git clone https://github.com/zsh-users/zsh-completions "$C/plugins/zsh-completions"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting "$C/plugins/zsh-syntax-highlighting"
+```
+
+Then link the files from the repo root:
+
+```
+for f in .zshrc .p10k.zsh .hushlogin; do ln -s "$PWD/zsh/$f" ~/$f; done
+```
+
+Credentials go in `~/.zsh_private`, which `.zshrc` sources and this repo never holds. Running `p10k configure` again overwrites the Vesper prompt colors.
+
 ## License
 
 MIT. See `LICENSE`.
