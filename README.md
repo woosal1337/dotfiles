@@ -14,17 +14,20 @@ rex -C <client> do client.theme.import path="$PWD/rex/themes/Vesper"
 
 ## pi
 
-[`pi/`](pi) holds my global [pi](https://pi.dev) settings, from `~/.pi/agent/`.
+[`pi/`](pi) holds my global [pi](https://pi.dev) settings. `~/.pi/agent/` links to these files, so changes made in pi show up here.
 
 - `settings.json` uses Claude through [pi-claude-bridge](https://github.com/elidickinson/pi-claude-bridge) by default, with Opus 5.5 as the default model. It enables the Claude 5 models and Grok 4.7. It also shows tokens per second with [pi-tps-footer](https://github.com/kmike/pi-tps-footer), and keeps up to 500K recent tokens when compacting Claude sessions.
 - `claude-bridge.json` sets the bridge to the Claude Max plan.
 
-To install, copy both files into `~/.pi/agent/`, then run:
+To install, link both files from the repo root:
 
 ```
-pi install npm:pi-claude-bridge
-pi install npm:pi-tps-footer
+mkdir -p ~/.pi/agent
+ln -s "$PWD/pi/settings.json" ~/.pi/agent/settings.json
+ln -s "$PWD/pi/claude-bridge.json" ~/.pi/agent/claude-bridge.json
 ```
+
+The next time pi starts, it installs the packages that `settings.json` lists.
 
 These files are left out on purpose. `auth.json` holds credentials. `models-store.json` is a model list that pi rebuilds itself. `extensions/herdr-agent-state.ts` belongs to herdr, which reinstalls and overwrites it.
 
