@@ -1,0 +1,36 @@
+{
+  "packages": [
+    "npm:pi-claude-bridge",
+    "npm:pi-tps-footer"
+  ],
+  "lastChangelogVersion": "1.4.0",
+  "defaultProvider": "claude-bridge",
+  "defaultModel": "claude-opus-5-5",
+  "enabledModels": [
+    "claude-bridge/claude-fable-5-1",
+    "claude-bridge/claude-opus-5-5",
+    "claude-bridge/claude-sonnet-5-5",
+    "claude-bridge/claude-haiku-5-5",
+    "xai/grok-4.7"
+  ],
+  "compaction": {
+    "modelOverrides": {
+      "claude-bridge/claude-fable-5-1": {
+        "reserveTokens": 33000,
+        "keepRecentTokens": 500000
+      },
+      "claude-bridge/claude-opus-5-5": {
+        "reserveTokens": 33000,
+        "keepRecentTokens": 500000
+      },
+      "claude-bridge/claude-sonnet-5-5": {
+        "reserveTokens": 33000,
+        "keepRecentTokens": 500000
+      },
+      "claude-bridge/claude-haiku-5-5": {
+        "reserveTokens": 33000,
+        "keepRecentTokens": 500000
+      }
+    }
+  }
+}
