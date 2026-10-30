@@ -12,7 +12,7 @@ typeset -U path fpath
 
 # >>> grok installer >>>
 export PATH="$HOME/.grok/bin:$PATH"
-fpath=(~/.grok/completions/zsh $fpath)  # before oh-my-zsh, so its compinit picks it up
+fpath=(~/.grok/completions/zsh $fpath)
 # <<< grok installer <<<
 
 # oh-my-zsh
