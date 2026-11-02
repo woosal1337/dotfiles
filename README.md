@@ -12,6 +12,23 @@ To install it, run **Import Theme File** from the Rex command palette and pick t
 rex -C <client> do client.theme.import path="$PWD/rex/themes/Vesper"
 ```
 
+## Herdr
+
+[`herdr/`](herdr) holds Vesper for the [Herdr](https://herdr.dev) desktop app. `~/.config/herdr-app/` links to these files.
+
+- `themes/vesper.json` uses the same terminal palette as the Rex port. Panels use `#161616`, borders `#232323`, and peach `#ffc799` as the accent.
+- `layouts/terminals-vesper.json` is a clone of Herdr's Terminals layout. The shipped layout sets its own colors, and a theme pick changes only the cursor. The clone uses the Vesper theme and takes every color from it.
+
+To install, link both files from the repo root and switch to the layout:
+
+```
+ln -s "$PWD/herdr/themes/vesper.json" ~/.config/herdr-app/themes/vesper.json
+ln -s "$PWD/herdr/layouts/terminals-vesper.json" ~/.config/herdr-app/layouts/terminals-vesper.json
+herdr-app do layout.switch '{"name":"terminals-vesper"}'
+```
+
+For the main Herdr layout, add `"theme": "vesper"` to `~/.config/herdr-app/settings.json`. The herdr TUI has a built-in `vesper` theme: set `name = "vesper"` under `[theme]` in `~/.config/herdr/config.toml`.
+
 ## pi
 
 [`pi/`](pi) holds my global [pi](https://pi.dev) settings. `~/.pi/agent/` links to these files, so changes made in pi show up here.
