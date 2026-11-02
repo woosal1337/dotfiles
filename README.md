@@ -27,6 +27,8 @@ ln -s "$PWD/herdr/layouts/terminals-vesper.json" ~/.config/herdr-app/layouts/ter
 herdr-app do layout.switch '{"name":"terminals-vesper"}'
 ```
 
+On Windows, copy the two files into `%USERPROFILE%\.config\herdr-app\themes\` and `layouts\` instead, and run `herdr-app do layout.switch --name terminals-vesper`. PowerShell strips the quotes from the JSON form.
+
 For the main Herdr layout, add `"theme": "vesper"` to `~/.config/herdr-app/settings.json`. The herdr TUI has a built-in `vesper` theme: set `name = "vesper"` under `[theme]` in `~/.config/herdr/config.toml`.
 
 ## pi
