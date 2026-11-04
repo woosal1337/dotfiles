@@ -10,6 +10,14 @@ fi
 # Drop duplicate PATH/fpath entries that installers keep prepending.
 typeset -U path fpath
 
+# An app opened from a Claude Code session (open -a Herdr) hands that session's env to every pane;
+# claude then sees CLAUDE_CODE_CHILD_SESSION and stops saving transcripts. Keep it only under claude itself.
+if [[ -n $CLAUDECODE && $(ps -o comm= -p $PPID) != *claude* ]]; then
+  unset CLAUDECODE CLAUDE_CODE_CHILD_SESSION CLAUDE_CODE_SESSION_ID CLAUDE_CODE_BRIDGE_SESSION_ID \
+    CLAUDE_CODE_ENTRYPOINT CLAUDE_CODE_EXECPATH CLAUDE_CODE_SESSION_ATTENDED \
+    CLAUDE_CODE_MESSAGING_SOCKET CLAUDE_CODE_MESSAGING_TOKEN CLAUDE_PID CLAUDE_EFFORT
+fi
+
 # >>> grok installer >>>
 export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
