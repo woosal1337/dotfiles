@@ -27,6 +27,7 @@ fpath=(~/.grok/completions/zsh $fpath)
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
+ZSH_COMPDUMP="$HOME/.cache/zcompdump-$ZSH_VERSION"  # keep the completion cache out of ~
 source "$ZSH/oh-my-zsh.sh"
 
 # Vesper colors: peach #FFC799, mint #99FFE4, red #FF8080, grays #A0A0A0 / #8B8B8B / #505050.
