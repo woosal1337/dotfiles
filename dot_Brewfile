@@ -12,6 +12,8 @@ brew "cocoapods"
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Lock file during command
+brew "flock"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
