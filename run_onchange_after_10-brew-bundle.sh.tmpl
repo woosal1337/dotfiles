@@ -1,0 +1,10 @@
+#!/bin/sh
+# Runs on first apply and again whenever the Brewfile changes.
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+BREW="$(command -v brew || echo /opt/homebrew/bin/brew)"
+if [ ! -x "$BREW" ]; then
+  echo "chezmoi: Homebrew not installed; skipping Brewfile. Install it from https://brew.sh, then run: chezmoi apply" >&2
+  exit 0
+fi
+# --no-upgrade: install what's missing, never upgrade what you already have
+"$BREW" bundle --file "$HOME/.Brewfile" --no-upgrade

@@ -1,0 +1,77 @@
+tap "acsandmann/tap"
+tap "felixkratz/formulae"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Git extension for versioning large files
+brew "git-lfs"
+# Audit git repos for secrets
+brew "gitleaks"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Terminal file manager
+brew "lf"
+# Postgres C API library
+brew "libpq"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
+# Deep clean and optimize your Mac
+brew "mole"
+# Message broker implementing the MQTT protocol
+brew "mosquitto"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# HTTP load generator, inspired by rakyll/hey with tui animation
+brew "oha"
+# Development kit for the Java programming language
+brew "openjdk"
+# Development kit for the Java programming language
+brew "openjdk@17"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Rsync for cloud storage
+brew "rclone"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Modernized, complete, self-contained TeX/LaTeX engine
+brew "tectonic"
+# Terminal multiplexer
+brew "tmux"
+# Watch files and take action when they change
+brew "watchman"
+# Internet file retriever
+brew "wget"
+# Tiling window manager for macOS
+brew "acsandmann/tap/rift", trusted: true
+# A window border system for macOS
+brew "felixkratz/formulae/borders", trusted: true
+# Custom macOS statusbar with shell plugin, interaction and graph support
+brew "felixkratz/formulae/sketchybar", trusted: true
+# Command-line tools for building and debugging Android apps
+cask "android-commandlinetools"
+# Android SDK component
+cask "android-platform-tools"
+cask "font-hack-nerd-font"
+cask "font-monaspace"
+cask "font-monaspace-var"
+cask "font-sketchybar-app-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+uv "actionlint-py"
+uv "pre-commit"
+uv "shellcheck-py"
