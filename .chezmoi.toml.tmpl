@@ -1,0 +1,12 @@
+# Keep the source in this repo, wherever it was cloned
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+# Plain files become symlinks into the repo, so edits made by apps land here.
+# Templates, executables and create_ files are still copied.
+mode = "symlink"
+
+[add]
+    # refuse (not just warn) to add files that look like they contain secrets
+    secrets = "error"
+
+[edit]
+    apply = true
