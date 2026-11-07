@@ -21,7 +21,7 @@ run_on_start = [
 hot_reload = true
 
 [settings.layout]
-mode = "bsp"                       # each new window halves the focused one; "traditional" = i3 rows
+mode = "traditional"               # i3-style: new windows open side by side in the focused container, equal widths; "bsp" halves the focused one
 window_insertion_point = "next_to_selection"
 
 [settings.layout.traditional]
