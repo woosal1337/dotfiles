@@ -1,0 +1,13 @@
+#!/bin/bash
+# JankyBorders — Vesper: grey focus, dim grey rest
+# colours are 0xAARRGGBB (AA = opacity)
+
+options=(
+  style=round
+  width=4.0
+  hidpi=on
+  active_color=0xffa0a0a0    # focused window: Vesper grey
+  inactive_color=0xff303030  # everything else: dim
+)
+
+borders "${options[@]}"

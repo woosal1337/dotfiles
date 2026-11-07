@@ -1,0 +1,76 @@
+#!/bin/bash
+# SketchyBar — two Vesper islands either side of the notch
+#   left : Rift workspaces (+ app icons, peach underline) · focused app
+#   right: network graph · cpu graph · battery · date + time
+# Reload after editing: sketchybar --reload
+
+PLUGINS="$HOME/.config/sketchybar/plugins"
+FONT="Monaspace Neon Var"
+
+# Vesper (0xAARRGGBB)
+BG=0xff101010; OUTLINE=0xff282828
+WHITE=0xffffffff; GREY=0xffa0a0a0; DIM=0xff505050; PEACH=0xffffc799
+
+# ── bar: transparent strip; the islands (brackets) carry the background ──
+sketchybar --bar position=top height=38 y_offset=4 margin=8 \
+                 color=0x00000000 topmost=off sticky=on notch_width=200
+
+sketchybar --default \
+  icon.font="$FONT:Regular:13.0" label.font="$FONT:Regular:13.0" \
+  icon.color=$GREY label.color=$WHITE \
+  icon.padding_left=0 icon.padding_right=4 label.padding_left=0 label.padding_right=0 \
+  padding_left=6 padding_right=6 background.height=26
+
+# ── left island ─────────────────────────────────────────────────────────
+sketchybar --add event rift_workspace_changed
+APPFONT="sketchybar-app-font:Regular:14.0"
+for i in 1 2 3 4 5; do
+  # icon = number, label = icons of the apps on it, background = underline (current only)
+  sketchybar --add item space.$i left \
+    --set space.$i icon="$i" icon.padding_right=0 \
+          label.font="$APPFONT" label.color=$GREY label.padding_left=7 label.y_offset=-1 \
+          padding_left=10 padding_right=10 \
+          background.color=$PEACH background.height=2 background.y_offset=-10 background.corner_radius=1 \
+          background.drawing=off \
+          click_script="rift-cli execute workspace switch $((i-1)) >/dev/null 2>&1"
+done
+sketchybar --add item spaces.ctl left \
+  --set spaces.ctl drawing=off updates=on script="$PLUGINS/spaces.sh" \
+  --subscribe spaces.ctl rift_workspace_changed system_woke
+
+sketchybar --add item front_app left \
+  --set front_app icon.drawing=off label.color=$GREY padding_left=18 padding_right=14 script="$PLUGINS/front_app.sh" \
+  --subscribe front_app front_app_switched
+
+sketchybar --add bracket left_island '/space\..*/' front_app \
+  --set left_island background.color=$BG background.border_color=$OUTLINE background.border_width=1 \
+        background.corner_radius=10 background.height=34
+
+# ── right island (added right-to-left: clock is outermost) ───────────────
+sketchybar --add item clock right \
+  --set clock icon.drawing=off update_freq=30 script="$PLUGINS/clock.sh" padding_left=14 padding_right=12
+
+sketchybar --add item battery right \
+  --set battery icon="bat" padding_left=14 padding_right=14 update_freq=60 script="$PLUGINS/battery.sh" \
+  --subscribe battery power_source_change system_woke
+
+sketchybar --add item cpu.label right \
+  --set cpu.label icon.drawing=off label.width=34 label.align=right padding_left=4 padding_right=14 \
+  --add graph cpu.graph right 44 \
+  --set cpu.graph graph.color=$GREY graph.fill_color=0x33a0a0a0 graph.line_width=1.0 \
+        background.height=16 icon="cpu" icon.padding_right=6 padding_left=14 padding_right=2 \
+        update_freq=2 script="$PLUGINS/cpu.sh"
+
+sketchybar --add item net.label right \
+  --set net.label icon.drawing=off label.width=48 label.align=right padding_left=4 padding_right=14 \
+  --add graph net.graph right 44 \
+  --set net.graph graph.color=$GREY graph.fill_color=0x33a0a0a0 graph.line_width=1.0 \
+        background.height=16 icon="net" icon.padding_right=6 padding_right=2 padding_left=12 \
+        update_freq=2 script="$PLUGINS/net.sh" \
+  --subscribe net.graph mouse.entered mouse.exited
+
+sketchybar --add bracket right_island net.graph net.label cpu.graph cpu.label battery clock \
+  --set right_island background.color=$BG background.border_color=$OUTLINE background.border_width=1 \
+        background.corner_radius=10 background.height=34
+
+sketchybar --update
