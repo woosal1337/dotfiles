@@ -99,3 +99,8 @@ export PI_CLIPBOARD_OSC52=1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Vesper file colours for lsd, fd, tree (from advtszn/dotfiles; lf has its own copy)
+export LS_COLORS='di=1;38;2;255;199;153:ln=3;38;2;153;255;228:ex=38;2;153;255;228:fi=0:pi=38;2;160;160;160:so=38;2;160;160;160:bd=38;2;160;160;160:cd=38;2;160;160;160:or=38;2;255;128;128:mi=38;2;255;128;128'
+if command -v lsd >/dev/null; then alias ls=lsd ll='lsd -la' lt='lsd --tree --depth 2'; fi

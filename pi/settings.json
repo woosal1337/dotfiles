@@ -32,5 +32,6 @@
         "keepRecentTokens": 500000
       }
     }
-  }
+  },
+  "theme": "vesper"
 }
