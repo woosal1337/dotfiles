@@ -1,0 +1,8 @@
+# lsd — shared defaults for ls / ll / lt
+color:
+  theme: custom          # reads colors.yaml next to this file
+icons:
+  when: never
+sorting:
+  dir-grouping: first
+date: '+%b %d %H:%M'

@@ -1,0 +1,39 @@
+# Vesper — peach #ffc799, mint #99ffe4, red #ff8080, grey #a0a0a0, dim #505050
+user: "#a0a0a0"
+group: "#505050"
+permission:
+  read: "#ffc799"
+  write: "#99ffe4"
+  exec: "#ff8080"
+  exec-sticky: "#ff8080"
+  no-access: "#505050"
+  octal: "#a0a0a0"
+  acl: "#a0a0a0"
+  context: "#a0a0a0"
+date:
+  hour-old: "#99ffe4"
+  day-old: "#a0a0a0"
+  older: "#505050"
+size:
+  none: "#505050"
+  small: "#a0a0a0"
+  medium: "#ffc799"
+  large: "#ff8080"
+inode:
+  valid: "#a0a0a0"
+  invalid: "#505050"
+links:
+  valid: "#a0a0a0"
+  invalid: "#505050"
+tree-edge: "#505050"
+git-status:
+  default: "#a0a0a0"
+  unmodified: "#505050"
+  ignored: "#505050"
+  new-in-index: "#99ffe4"
+  new-in-workdir: "#99ffe4"
+  typechange: "#ffc799"
+  deleted: "#ff8080"
+  renamed: "#ffc799"
+  modified: "#ffc799"
+  conflicted: "#ff8080"

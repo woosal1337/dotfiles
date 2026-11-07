@@ -1,0 +1,21 @@
+# Vesper colors (matches Ghostty / tmux / starship)
+#   peach #ffc799  mint #99ffe4  red #ff8080  grey #a0a0a0  dim #505050
+
+set drawbox true
+set roundbox true
+set borderfmt "\033[38;2;80;80;80m"
+
+# selected file: dark text on peach; parent column: peach on dark grey
+set cursoractivefmt  "\033[1;38;2;16;16;16;48;2;255;199;153m"
+set cursorparentfmt  "\033[38;2;255;199;153;48;2;40;40;40m"
+set cursorpreviewfmt "\033[4m"
+
+# top line: just the path, no user@host
+set promptfmt "\033[1;38;2;255;199;153m%d\033[0m\033[1m%f\033[0m"
+
+set numberfmt "\033[38;2;80;80;80m"
+set statfmt   "\033[38;2;160;160;160m%p\033[0m| %S| %t| -> %l"
+set copyfmt   "\033[7;38;2;153;255;228m"
+set cutfmt    "\033[7;38;2;255;128;128m"
+set tagfmt    "\033[38;2;255;199;153m"
+set errorfmt  "\033[1;38;2;255;128;128m"

@@ -1,0 +1,15 @@
+font-size = 16
+font-family = Monaspace Neon Var
+font-feature = "calt, ss01, ss02, ss03, ss04, ss05, ss06, ss07, ss08, ss09, liga"
+background-opacity = 0.75
+background-blur = true
+window-height = 900
+window-width = 1400
+window-padding-x = 16
+theme = Vesper
+window-inherit-working-directory = false
+
+# Defaults plus ssh-env/ssh-terminfo (both off by default).
+shell-integration-features = ssh-env,ssh-terminfo
+keybind = cmd+k=toggle_command_palette
+keybind = cmd+shift+p=text:\x10
