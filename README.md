@@ -29,22 +29,22 @@ Built on [advtszn/dotfiles](https://github.com/advtszn/dotfiles), managed with [
 
 ## Keys
 
-Window management is all `⌥` (Option).
+Window management is `⌥` (Option), with `⌃⌘` + arrows for moving between windows.
 
 | Keys                                            | Action                                    |
 | ----------------------------------------------- | ----------------------------------------- |
 | `⌥ 1–5`                                         | switch workspace                          |
 | `⌥⇧ 1–5`                                        | send window to workspace                  |
 | `⌃ ←` / `⌃ →` · 3-finger swipe                  | previous / next workspace                 |
-| `⌥ H J K L`                                     | focus left / down / up / right            |
-| `⌥⇧ H J K L`                                    | move window                               |
+| `⌃⌘ ← ↓ ↑ →`                                    | focus left / down / up / right            |
+| `⌃⌘⇧ ← ↓ ↑ →`                                   | move window                               |
 | `⌥ =` / `⌥ -` · `⌥⇧ =` / `⌥⇧ -`                 | wider / narrower · taller / shorter       |
 | `⌥ /`                                           | flip split direction                      |
 | `⌥ ,`                                           | stack windows                             |
 | `⌥ F` · `⌥⇧ F`                                  | fullscreen (keep gaps) · edge to edge     |
 | `⌥⇧ Space`                                      | float at a sensible size / back to tiling |
 | `⌥ Tab`                                         | last workspace                            |
-| `⌥⇧ ;` then `R` / `F` / `⌥⇧ HJKL` / `U` / `Esc` | balance / float / join / unjoin / reload  |
+| `⌥⇧ ;` then `R` / `F` / `⌃⌘⇧ ←↓↑→` / `U` / `Esc` | balance / float / join / unjoin / reload |
 
 Workspaces: 1 web (Safari), 2 code (Rex, Ghostty, Zed, Xcode), 3 chat (Slack, Teams, Music).
 

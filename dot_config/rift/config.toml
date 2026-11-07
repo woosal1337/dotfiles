@@ -112,17 +112,17 @@ comb1 = "Alt + Shift"
 "comb1 + 4" = { move_window_to_workspace = 3 }
 "comb1 + 5" = { move_window_to_workspace = 4 }
 
-# focus a neighbour (same keys as tmux panes)
-"Alt + H" = { move_focus = "left" }
-"Alt + J" = { move_focus = "down" }
-"Alt + K" = { move_focus = "up" }
-"Alt + L" = { move_focus = "right" }
+# focus a neighbour: ⌃⌘ + arrows
+"Ctrl + Meta + Left" = { move_focus = "left" }
+"Ctrl + Meta + Down" = { move_focus = "down" }
+"Ctrl + Meta + Up" = { move_focus = "up" }
+"Ctrl + Meta + Right" = { move_focus = "right" }
 
-# swap with a neighbour
-"comb1 + H" = { move_node = "left" }
-"comb1 + J" = { move_node = "down" }
-"comb1 + K" = { move_node = "up" }
-"comb1 + L" = { move_node = "right" }
+# swap with a neighbour: ⌃⌘⇧ + arrows
+"Ctrl + Meta + Shift + Left" = { move_node = "left" }
+"Ctrl + Meta + Shift + Down" = { move_node = "down" }
+"Ctrl + Meta + Shift + Up" = { move_node = "up" }
+"Ctrl + Meta + Shift + Right" = { move_node = "right" }
 
 # size and layout
 "Alt + F" = "toggle_fullscreen_within_gaps"   # fill the screen, keep gaps + border
@@ -143,9 +143,9 @@ comb1 = "Alt + Shift"
 "Escape" = [ "reload_config", { binding_mode = "default" } ]
 "R" = [ "balance", { binding_mode = "default" } ]                    # even out sizes
 "F" = [ { toggle_window_floating = { center = true, size = "smart" } }, { binding_mode = "default" } ]   # float centred / unfloat
-# join with a neighbour: [A|B|C], focus C, ⌥⇧; then ⌥⇧H  ->  A | B/C stacked
-"Alt + Shift + H" = [ { join_window = "left" },  { binding_mode = "default" } ]
-"Alt + Shift + J" = [ { join_window = "down" },  { binding_mode = "default" } ]
-"Alt + Shift + K" = [ { join_window = "up" },    { binding_mode = "default" } ]
-"Alt + Shift + L" = [ { join_window = "right" }, { binding_mode = "default" } ]
+# join with a neighbour: [A|B|C], focus C, ⌥⇧; then ⌃⌘⇧←  ->  A | B/C stacked
+"Ctrl + Meta + Shift + Left" = [ { join_window = "left" },  { binding_mode = "default" } ]
+"Ctrl + Meta + Shift + Down" = [ { join_window = "down" },  { binding_mode = "default" } ]
+"Ctrl + Meta + Shift + Up" = [ { join_window = "up" },    { binding_mode = "default" } ]
+"Ctrl + Meta + Shift + Right" = [ { join_window = "right" }, { binding_mode = "default" } ]
 "U" = [ "unjoin_windows", { binding_mode = "default" } ]             # undo a join
