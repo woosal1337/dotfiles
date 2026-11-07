@@ -1,0 +1,48 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "disable_ai": true,
+  "buffer_font_family": "Ioskeley Mono",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 500
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "agent_servers": {
+    "cursor": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "bypassPermissions"
+      },
+      "type": "registry"
+    }
+  },
+  "base_keymap": "JetBrains",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "auto_install_extensions": { "vesper": true },
+  "theme": {
+    "mode": "dark",
+    "light": "Vesper",
+    "dark": "Vesper"
+  },
+  "theme_overrides": {
+    "Vesper": { "syntax": { "property.json_key": { "color": "#FFC799" } } }
+  },
+}
