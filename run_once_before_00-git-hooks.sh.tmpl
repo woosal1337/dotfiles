@@ -1,0 +1,3 @@
+#!/bin/sh
+# New machine: turn on the gitleaks pre-commit hook for the dotfiles repo
+git -C "{{ .chezmoi.sourceDir }}" config core.hooksPath .githooks

@@ -1,0 +1,32 @@
+title = "dotfiles"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "ipv4-address"
+description = "IP address (server hosts shouldn't be public)"
+regex = '''\b(?:25[0-5]|2[0-4]\d|1?\d?\d)(?:\.(?:25[0-5]|2[0-4]\d|1?\d?\d)){3}\b'''
+[[rules.allowlists]]
+regexes = ['''^(?:127\.0\.0\.1|0\.0\.0\.0)$''']
+
+[[rules]]
+id = "email-address"
+description = "Email address (personal and work addresses stay out of a public repo)"
+regex = '''[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}'''
+[[rules.allowlists]]
+regexes = ['''noreply''', '''@example\.com$''', '''^deathray-testing@''', '''^x@y\.com$''']  # last two: p10k's stock examples
+
+[[rules]]
+id = "zed-ssh-connections"
+description = "Zed ssh_connections block (server hosts/users)"
+regex = '''"ssh_connections"\s*:'''
+
+[[rules]]
+id = "pem-key-reference"
+description = "Reference to a .pem key file"
+regex = '''[A-Za-z0-9_-][A-Za-z0-9_.-]*\.pem\b'''
+
+[[allowlists]]
+description = "this config file itself"
+paths = ['''(^|/)\.gitleaks\.toml$''']
